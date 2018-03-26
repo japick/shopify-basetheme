@@ -69,7 +69,7 @@ gulp.task('watch', function () {
 // Shopify task
 gulp.task('shopifywatch', function() {
 	return watch('./+(assets|layout|config|snippets|templates|locales)/**')
-		.pipe(gulpShopify('7c51310a08c438d2e26d85f733c21a1a', 'fb2ded40a5caa3e540c8de4adfabc718', 'devstore1234.myshopify.com'));
+		.pipe(gulpShopify('api-key', 'password', 'store-name.myshopify.com'));
 });
 
 // Default task
