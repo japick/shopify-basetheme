@@ -25,7 +25,7 @@
 <body id="{{ page_title | handle }}" class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}" >
     <div>
         <a href="/cart">{{ cart.item_count }} {{ cart.item_count | pluralize: 'item', 'items' }} ({{ cart.total_price | money }})</a>
-        <a href="/cart">Check out!</a>
+        <a href="/cart">Check out</a>
     </div>
     <h1><a href="/">{{ shop.name }}</a></h1>
     <ul>
