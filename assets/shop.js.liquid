@@ -1,0 +1,33 @@
+(function () {
+'use strict';
+
+const nav = {
+	init() {
+		console.log('import works, yo!');
+	}
+};
+
+let test = () => {
+	console.log('arrow function');
+};
+
+test();
+
+nav.init();
+
+}());
+
+var global = (function (exports) {
+'use strict';
+
+const nav = {
+	init() {
+		console.log('import works, yo!');
+	}
+};
+
+exports.nav = nav;
+
+return exports;
+
+}({}));
