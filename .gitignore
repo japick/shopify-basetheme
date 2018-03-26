@@ -1,5 +1,4 @@
 config.yml
-config-example.yml
 config/settings_data.json
 theme.lock
 node_modules/
