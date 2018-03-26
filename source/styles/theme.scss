@@ -1,5 +1,7 @@
+@import "base/reset";
 @import "base/grid";
 @import "base/vars";
+@import "base/spacing";
 
 @import "./node_modules/foundation-sites/scss/grid/grid";
 @import "./node_modules/foundation-sites/scss/util/util";
@@ -7,7 +9,3 @@
 
 @include foundation-grid;
 @include foundation-visibility-classes;
-
-body {
-	background-color: $bg;
-}

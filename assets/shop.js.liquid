@@ -1,23 +1,124 @@
+var environment = (function (exports) {
+'use strict';
+
+const $ = jQuery.noConflict();
+
+const $document = $(document);
+const $window = $(window);
+const $html = $(document.documentElement);
+const $body = $(document.body);
+
+exports.$document = $document;
+exports.$window = $window;
+exports.$html = $html;
+exports.$body = $body;
+
+return exports;
+
+}({}));
+
 (function () {
 'use strict';
 
-const nav = {
-	init() {
-		console.log('import works, yo!!!');
-	}
+const $ = jQuery.noConflict();
+
+const $document = $(document);
+const $window = $(window);
+const $html = $(document.documentElement);
+const $body = $(document.body);
+
+let $$1 = jQuery.noConflict();
+
+const helper = {
+
+    breakpoint: {
+        //medium: window.matchMedia('(min-width: 769px)'),
+    },
+
+    touch_support: Modernizr.touch
 };
 
-let test = () => {
-	console.log('arrow function');
-};
+var wait_for_final_event = function () {
 
-test();
+    var timers = {};
 
-nav.init();
+    return function (callback, ms, uniqueId) {
+        if (!uniqueId) {
+            // don't call this twice without a uniqueID
+            uniqueId = Math.random() * 1000;
+        }
+        if (timers[uniqueId]) {
+            clearTimeout(timers[uniqueId]);
+        }
+        timers[uniqueId] = setTimeout(callback, ms);
+    };
+}();
+
+(function ($, document) {
+
+    $(document).ready(function () {
+
+        //window.lazySizesConfig = window.lazySizesConfig || {};
+    });
+
+    $(window).load(function () {
+    });
+
+    $(window).scroll(function () {});
+
+    $(window).resize(function () {
+
+        wait_for_final_event(function () {}, 150, 'init');
+    });
+})(jQuery, document);
 
 }());
 
-var global = (function (exports) {
+var environment = (function (exports) {
+'use strict';
+
+const $ = jQuery.noConflict();
+
+const $document = $(document);
+const $window = $(window);
+const $html = $(document.documentElement);
+const $body = $(document.body);
+
+let $$1 = jQuery.noConflict();
+
+const helper = {
+
+    breakpoint: {
+        //medium: window.matchMedia('(min-width: 769px)'),
+    },
+
+    touch_support: Modernizr.touch
+};
+
+var wait_for_final_event = function () {
+
+    var timers = {};
+
+    return function (callback, ms, uniqueId) {
+        if (!uniqueId) {
+            // don't call this twice without a uniqueID
+            uniqueId = Math.random() * 1000;
+        }
+        if (timers[uniqueId]) {
+            clearTimeout(timers[uniqueId]);
+        }
+        timers[uniqueId] = setTimeout(callback, ms);
+    };
+}();
+
+exports.helper = helper;
+exports.wait_for_final_event = wait_for_final_event;
+
+return exports;
+
+}({}));
+
+var environment = (function (exports) {
 'use strict';
 
 const nav = {

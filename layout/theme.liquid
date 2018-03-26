@@ -21,7 +21,6 @@
     <meta name="viewport" content="width=device-width" />
     {{ content_for_header }}
     {{ 'theme.css' | asset_url | stylesheet_tag }}
-    {{ '//http://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js' | script_tag }}
 </head>
 <body id="{{ page_title | handle }}" class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}" >
     <div>
@@ -35,6 +34,8 @@
         {% endfor %}
     </ul>
     {{ content_for_layout }}
+    {{ '//ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js' | script_tag }}
+    {{ '//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js' | script_tag }}
     {{ 'shop.js'  | asset_url | script_tag }}
 </body>
 </html>

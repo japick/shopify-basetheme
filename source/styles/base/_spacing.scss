@@ -1,0 +1,64 @@
+/**
+ *
+ * VS VARIABLES
+ *
+ */
+
+// mobile (floor in vs-spacing)
+
+$VS1m: 10px;
+$VS2m: 20px;
+$VS3m: 30px;
+$VS4m: 40px;
+$VS5m: 50px;
+$VS6m: 60px;
+$VS7m: 70px;
+$VS8m: 80px;
+
+
+// desktop (ceiling in vs-spacing)
+
+$VS1d: 20px;
+$VS2d: 30px;
+$VS3d: 50px;
+$VS4d: 80px;
+$VS5d: 100px;
+$VS6d: 150px;
+$VS7d: 200px;
+
+
+/**
+ *
+ * VS-SPACING
+ *
+ */
+
+$resolution-range-bottom: map-get($breakpoints, medium);
+$resolution-range-top: map-get($breakpoints, xxlarge);
+
+@function get-linear-size($mobile-size, $desktop-size) {
+
+    $a: ($desktop-size - $mobile-size) / ( $resolution-range-top - $resolution-range-bottom );
+    $b: -$a * $resolution-range-bottom;
+
+    @return calc(#{$a} * 100vw + #{$b + $mobile-size});
+}
+
+@mixin vs-spacing($field, $mobile-size, $desktop-size) {
+
+    #{$field}: get-linear-size($mobile-size, $desktop-size);
+
+    @include breakpoint( xlarge ) {
+        #{$field}: $desktop-size;
+    }
+
+    @include breakpoint( medium down ) {
+        #{$field}: $mobile-size;
+    }
+}
+
+@mixin _module-spacing($property: top) {
+    @include vs-spacing(padding-#{$property}, $VS6m, $VS5d);
+}
+
+// @include _module-spacing(top);

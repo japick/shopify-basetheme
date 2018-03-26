@@ -9,6 +9,7 @@ $grid-column-count: 12;
 $global-flexbox: false;
 $global-right: left;
 $global-left: left;
+
 $breakpoints: (
     small: 0,
     medium: 640px,
@@ -17,4 +18,5 @@ $breakpoints: (
     xlarge: 1280px,
     xxlarge: 1500px,
 );
+
 $breakpoint-classes: (small medium xmedium large xlarge xxlarge);
