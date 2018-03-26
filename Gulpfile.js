@@ -19,8 +19,8 @@ var config = {}
 config.paths = {}
 
 config.paths.src = {
-	styles: './styles/**/*.scss',
-	scripts: './scripts/*.js'
+	styles: './source/styles/**/*.scss',
+	scripts: './source/scripts/*.js'
 }
 
 config.paths.dist = {
