@@ -31,9 +31,11 @@ config.paths.dist = {
 // Styles task
 gulp.task('styles', function(){
   var processors = [
-		autoprefixer({browsers:['last 2 version']})
+		autoprefixer({browsers:['last 2 versions', '> 5%', 'Firefox ESR']})
 	];
-	return gulp.src( config.paths.src.styles )
+	return gulp.src([
+			config.paths.src.styles 
+		])
 		.pipe(plumber())
 		.pipe(sass({ outputStyle: 'uncompressed' }).on('error', sass.logError))
 		.pipe(postcss(processors))

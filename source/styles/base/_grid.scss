@@ -1,0 +1,20 @@
+$grid-column-gutter: (
+    small: 20px,
+    medium: 30px,
+    large: 60px,
+);
+
+$global-width: 1640px;
+$grid-column-count: 12;
+$global-flexbox: false;
+$global-right: left;
+$global-left: left;
+$breakpoints: (
+    small: 0,
+    medium: 640px,
+    xmedium: 800px,
+    large: 1025px,
+    xlarge: 1280px,
+    xxlarge: 1500px,
+);
+$breakpoint-classes: (small medium xmedium large xlarge xxlarge);

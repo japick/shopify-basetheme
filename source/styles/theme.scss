@@ -1,4 +1,12 @@
+@import "base/grid";
 @import "base/vars";
+
+@import "./node_modules/foundation-sites/scss/grid/grid";
+@import "./node_modules/foundation-sites/scss/util/util";
+@import "./node_modules/foundation-sites/scss/components/visibility";
+
+@include foundation-grid;
+@include foundation-visibility-classes;
 
 body {
 	background-color: $bg;
